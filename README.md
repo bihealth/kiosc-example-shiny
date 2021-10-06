@@ -87,6 +87,10 @@ df <- get(dataset, "package:datasets")
 runApp("build/app.R")
 ```
 
+You should be able to view the app:
+
+![App running](images/kioscshinyapp.gif)
+
 ## Creating the `app_run.R` script
 
 In our docker image, we will put a small R script which prepares the
@@ -222,12 +226,12 @@ Once the image has been uploaded, the only thing that remains is to
 configure KIOSC. For this, create a project in KIOSC [XXX] and create a new
 container [XXX]. We need to enter the following in the respective fields:
 
-|  Entry field        | Value                                          |
-| ------------------- | ---------------------------------------------- |
-| Repository          |ghcr.io/bihealth/kioscshinytest                 |
-| Tag                 |latest                                          |
-| Container port      |8080                                            |
-| Environment         |`{"dataset":"iris", "title":"Kiosc shiny test"} |
+|  Entry field        | Value                                           |
+| ------------------- | ----------------------------------------------- |
+| Repository          |ghcr.io/bihealth/kioscshinytest                  |
+| Tag                 |latest                                           |
+| Container port      |8080                                             |
+| Environment         |`{"dataset":"iris", "title":"Kiosc shiny test"}` |
 
 Start the container and you should be able to view the app from KIOSC.
 That's it!

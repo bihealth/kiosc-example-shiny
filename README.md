@@ -211,18 +211,23 @@ One thing that remains is to push the image to the Registry:
 docker push ghcr.io/bihealth/kioscshinytest:latest
 ```
 
+At this stage, if this is the first time you are pushing this image, you
+need to make sure that the repository (here: kioscshinytest) is made
+public. Refer to the instructions of your Container Registry of choice how
+to ensure this.
+
 ## Configuring KIOSC
 
 Once the image has been uploaded, the only thing that remains is to
 configure KIOSC. For this, create a project in KIOSC [XXX] and create a new
 container [XXX]. We need to enter the following in the respective fields:
 
-Entry field|Value
--------------------
-Repository|ghcr.io/bihealth/kioscshinytest
-Tag       |latest
-Container port|8080
-Environment|`{"dataset":"iris", "title":"Kiosc shiny test"}
+|  Entry field        | Value                                          |
+| ------------------- | ---------------------------------------------- |
+| Repository          |ghcr.io/bihealth/kioscshinytest                 |
+| Tag                 |latest                                          |
+| Container port      |8080                                            |
+| Environment         |`{"dataset":"iris", "title":"Kiosc shiny test"} |
 
 Start the container and you should be able to view the app from KIOSC.
 That's it!

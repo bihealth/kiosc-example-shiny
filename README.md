@@ -209,6 +209,13 @@ If you now open the URL [http://localhost:8080](http://localhost:8080), you
 should see our simple App up and running. Congratulations, the hardest part
 is now done.
 
+We can also test whether the environmental variables are correctly passed
+on to the app:
+
+```
+docker run -e TITLE="The mtcars dataset" -e DATASET="mtcars" -p 8080:8080 ghcr.io/bihealth/kioscshinytest:latest
+```
+
 One thing that remains is to push the image to the Registry:
 
 ```
@@ -231,7 +238,7 @@ container [XXX]. We need to enter the following in the respective fields:
 | Repository          |ghcr.io/bihealth/kioscshinytest                  |
 | Tag                 |latest                                           |
 | Container port      |8080                                             |
-| Environment         |`{"dataset":"iris", "title":"Kiosc shiny test"}` |
+| Environment         |`{"DATASET":"iris", "TITLE":"Kiosc shiny test"}` |
 
 Start the container and you should be able to view the app from KIOSC.
 That's it!
